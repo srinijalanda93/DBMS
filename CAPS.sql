@@ -169,12 +169,12 @@ insert into attendance (attendance_id, member_id, member_type, attendance_date, 
 (7012, 6004, 'volunteer', '2024-08-02', 'present');  -- Priya Singh
 
 select * from attendance;
--- volunteers from "coderbrainly"
+-- volunteers from "gd"
 select v.volunteer_id, v.name
 from volunteer v
 join teamleader t on v.teamleader_id = t.teamleader_id
 join committee c on t.committee_id = c.committee_id
-where c.committee_name = 'coderbrainly';
+where c.committee_name = 'gd';
 
 -- Attendance Records for coderbrainly
 select v.volunteer_id, v.name, count(a.attendance_id) as present_count
@@ -182,7 +182,189 @@ from volunteer v
 join teamleader t on v.teamleader_id = t.teamleader_id
 join committee c on t.committee_id = c.committee_id
 join attendance a on v.volunteer_id = a.member_id and a.member_type = 'volunteer'
-where c.committee_name = 'coderbrainly' and a.status = 'present'
+where c.committee_name = 'gd' and a.status = 'present'
 group by v.volunteer_id, v.name;
 
+show tables;
+select * from committee;
 
+-- 4 Retrieve the names of volunteers who have more attendance days marked 'present' than the average attendance in 'gd' committee.
+select v.name
+from volunteer v
+join teamleader t on v.teamleader_id = t.teamleader_id
+join committee c on t.committee_id = c.committee_id
+join attendance a on v.volunteer_id = a.member_id and a.member_type = 'volunteer'
+where c.committee_name = 'gd' and a.status = 'present'
+group by v.volunteer_id, v.name
+having count(a.attendance_id) > (
+    select avg(present_count)
+    from (
+        select count(a2.attendance_id) as present_count
+        from volunteer v2
+        join teamleader t2 on v2.teamleader_id = t2.teamleader_id
+        join committee c2 on t2.committee_id = c2.committee_id
+        join attendance a2 on v2.volunteer_id = a2.member_id and a2.member_type = 'volunteer'
+        where c2.committee_name = 'gd' and a2.status = 'present'
+        group by v2.volunteer_id
+    ) as avg_attendance
+);
+
+show tables;
+select * from committee;
+
+-- 5 Find the volunteers who have the highest attendance in each committee.
+-- Retrieve the names of volunteers who have the highest number of 'present' attendance days in each committee
+select v.name, c.committee_name 
+from volunteer v 
+join teamleader t on v.teamleader_id = t.teamleader_id 
+join committee c on t.committee_id = c.committee_id 
+join attendance a on v.volunteer_id = a.member_id and a.member_type = 'volunteer' 
+where a.status = 'present' 
+group by c.committee_id, v.volunteer_id, v.name, c.committee_name
+having count(a.attendance_id) = (
+    select max(attendance_count) 
+    from (
+        select c2.committee_id, count(a2.attendance_id) as attendance_count 
+        from volunteer v2 
+        join teamleader t2 on v2.teamleader_id = t2.teamleader_id 
+        join committee c2 on t2.committee_id = c2.committee_id 
+        join attendance a2 on v2.volunteer_id = a2.member_id and a2.member_type = 'volunteer' 
+        where a2.status = 'present' 
+        group by c2.committee_id, v2.volunteer_id
+    ) as committee_attendance
+    where committee_attendance.committee_id = c.committee_id
+);
+
+-- 6 List the names of volunteers who have participated in all committees under the wing 'techdeveloper'.
+-- there is no volunteer who participated in all committee of techdeveloper wing
+select v.name 
+from volunteer v 
+join teamleader t on v.teamleader_id = t.teamleader_id 
+join committee c on t.committee_id = c.committee_id 
+join wing w on c.wing_id = w.wing_id 
+where w.wing_name = 'techdeveloper' 
+group by v.volunteer_id 
+having count(distinct c.committee_id) = (
+    select count(*) 
+    from committee c2 
+    join wing w2 on c2.wing_id = w2.wing_id 
+    where w2.wing_name = 'techdeveloper'
+);
+
+SELECT 
+    *
+FROM
+    committee
+WHERE
+    wing_id = (SELECT 
+            wing_id
+        FROM
+            wing
+        WHERE
+            wing_name = 'techdeveloper');
+show tables;
+select * from committee;
+select * from wing;
+-- Check Committees under 'techdeveloper' Wing
+select count(*) as committee_count
+from committee c2 
+join wing w2 on c2.wing_id = w2.wing_id 
+where w2.wing_name = 'techdeveloper';
+
+-- Check Volunteers in the 'techdeveloper' Wing
+select v.volunteer_id, v.name
+from volunteer v 
+join teamleader t on v.teamleader_id = t.teamleader_id 
+join committee c on t.committee_id = c.committee_id 
+join wing w on c.wing_id = w.wing_id 
+where w.wing_name = 'techdeveloper';
+
+-- Check Committees for Each Volunteer
+select v.volunteer_id, v.name, count(distinct c.committee_id) as committee_count
+from volunteer v 
+join teamleader t on v.teamleader_id = t.teamleader_id 
+join committee c on t.committee_id = c.committee_id 
+join wing w on c.wing_id = w.wing_id 
+where w.wing_name = 'techdeveloper'
+group by v.volunteer_id, v.name;
+
+-- Verify Total Committees under 'techdeveloper'
+-- 6
+select v.name 
+from volunteer v 
+join teamleader t on v.teamleader_id = t.teamleader_id 
+join committee c on t.committee_id = c.committee_id 
+join wing w on c.wing_id = w.wing_id 
+where w.wing_name = 'techdeveloper' 
+group by v.volunteer_id 
+having count(distinct c.committee_id) = (
+    select count(*) 
+    from committee c2 
+    join wing w2 on c2.wing_id = w2.wing_id 
+    where w2.wing_name = 'techdeveloper'
+);
+select * from wing;
+select v.name 
+from volunteer v 
+join teamleader t on v.teamleader_id = t.teamleader_id 
+join committee c on t.committee_id = c.committee_id 
+join wing w on c.wing_id = w.wing_id 
+where w.wing_name = 'techdeveloper' 
+group by v.volunteer_id 
+having count(distinct c.committee_id) = (
+    select count(*) 
+    from committee c2 
+    join wing w2 on c2.wing_id = w2.wing_id 
+    where w2.wing_name = 'techdeveloper'
+);
+
+-- List Committees in 'Techdeveloper':
+select c.committee_name 
+from committee c
+join wing w on c.wing_id = w.wing_id
+where w.wing_name = 'techdeveloper';
+
+-- check Volunteer Participation:
+select v.name, c.committee_name
+from volunteer v
+join teamleader t on v.teamleader_id = t.teamleader_id
+join committee c on t.committee_id = c.committee_id
+join wing w on c.wing_id = w.wing_id
+where w.wing_name = 'techdeveloper';
+
+-- 7 Retrieve the committee names that have never been managed by the mentor 'Sudha'.
+select c.committee_name 
+from committee c 
+where c.committee_id not in (
+    select c2.committee_id 
+    from committee c2 
+    join wing w on c2.wing_id = w.wing_id 
+    join mentor m on w.wing_id = m.wing_id 
+    where m.name = 'sudha'
+);
+
+-- 8 Find the volunteers who have higher total attendance days marked 'present' than the average total attendance of all volunteers.
+select v.name 
+from volunteer v 
+join attendance a on v.volunteer_id = a.member_id and a.member_type = 'volunteer' 
+where a.status = 'present' 
+group by v.volunteer_id 
+having count(a.attendance_id) > (
+    select avg(total_attendance) 
+    from (
+        select count(a2.attendance_id) as total_attendance 
+        from volunteer v2 
+        join attendance a2 on v2.volunteer_id = a2.member_id and a2.member_type = 'volunteer' 
+        where a2.status = 'present' 
+        group by v2.volunteer_id
+    ) as avg_attendance
+);
+
+show tables;
+select * from coordinator;
+select * from mentor;
+select * from wing;
+select * from committee;
+select * from teamleader;
+
+select * from attendance;
