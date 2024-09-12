@@ -1,0 +1,13 @@
+teamleader_id,name,email,WingName,wing_id,mentor_id,status
+TL001,silvi,silvi@gmail.com,TechTank,W001,M001,active
+TL002,Avithika,Avithka@gmail.com,,W001,M001,active
+T021,priya,priya@gmail.com,Developer,W021,M021,inactive
+T022,riya,riya@gmail.com,Developer,W022,M021,active
+T129,avi kumar,avi@example.com,,,M301,active
+T120,sikta kumar,sikta@example.com,,,M301,inactive
+T072,Vyshnu,Vysh@gmail.com,Coding,W002,M802,inactive
+teamleader_id,name,email,WingName,wing_id,mentor_id,status
+,,,,,,
+T081,Ginya,Ginya@gmail.com,coding,W121,M801,active
+T091,Rukku,Rukku@gmail.com,TechTank,W001,M082,active
+,,,,,,

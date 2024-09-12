@@ -1,0 +1,192 @@
+Microsoft Windows [Version 10.0.22631.4169]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\Mentor.json" --jsonArray --uri mongodb://localhost:27017
+2024-09-12T19:56:56.496+0530    connected to: mongodb://localhost:27017
+2024-09-12T19:56:56.506+0530    2 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection TeamLeader --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\TeamLeader.json" --jsonArray --uri mongodb://localhost:27017
+2024-09-12T19:58:16.142+0530    connected to: mongodb://localhost:27017
+2024-09-12T19:58:16.145+0530    2 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Volunteer --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\Volunteer.json" --jsonArray --uri mongodb://localhost:27017
+2024-09-12T20:04:35.304+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:04:35.308+0530    2 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localhost:27017
+2024-09-12T20:25:10.156+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:25:10.164+0530    continuing through error: Document failed validation
+2024-09-12T20:25:10.164+0530    continuing through error: Document failed validation
+2024-09-12T20:25:10.164+0530    0 document(s) imported successfully. 2 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor - Sheet1.csv" --uri mongodb://localhost:27017
+2024-09-12T20:29:00.012+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:29:00.017+0530    continuing through error: Document failed validation
+2024-09-12T20:29:00.017+0530    continuing through error: Document failed validation
+2024-09-12T20:29:00.017+0530    0 document(s) imported successfully. 2 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor - Sheet1.csv" --uri mongodb://localhost:27017 --legacy
+2024-09-12T20:30:37.640+0530    error validating settings: cannot use --legacy if input type is not JSON
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localhost:27017
+2024-09-12T20:32:43.407+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:32:43.409+0530    continuing through error: Document failed validation
+2024-09-12T20:32:43.409+0530    continuing through error: Document failed validation
+2024-09-12T20:32:43.409+0530    0 document(s) imported successfully. 2 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\TeamLeader.csv" --uri mongodb://localhost:27017
+2024-09-12T20:33:27.378+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:33:27.383+0530    continuing through error: Document failed validation
+2024-09-12T20:33:27.383+0530    continuing through error: Document failed validation
+2024-09-12T20:33:27.383+0530    continuing through error: Document failed validation
+2024-09-12T20:33:27.383+0530    continuing through error: Document failed validation
+2024-09-12T20:33:27.383+0530    continuing through error: Document failed validation
+2024-09-12T20:33:27.383+0530    0 document(s) imported successfully. 5 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer.csv" --uri mongodb://localhost:27017
+2024-09-12T20:34:05.130+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:34:05.134+0530    continuing through error: Document failed validation
+2024-09-12T20:34:05.134+0530    continuing through error: Document failed validation
+2024-09-12T20:34:05.134+0530    continuing through error: Document failed validation
+2024-09-12T20:34:05.134+0530    continuing through error: Document failed validation
+2024-09-12T20:34:05.135+0530    0 document(s) imported successfully. 4 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localhost:27017
+2024-09-12T20:37:01.714+0530    error validating settings: must specify --fields, --fieldFile or --headerline to importthis file type
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assig
+ned_teams,join_date,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localho
+st:27017
+2024-09-12T20:41:04.156+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:41:04.159+0530    continuing through error: Document failed validation
+2024-09-12T20:41:04.159+0530    continuing through error: Document failed validation
+2024-09-12T20:41:04.159+0530    continuing through error: Document failed validation
+2024-09-12T20:41:04.159+0530    0 document(s) imported successfully. 3 document(s) failed to import.
+
+C:\Users\lsrin>>mongoimport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assig
+'--db' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\lsrin>ned_teams,join_date,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localho
+'ned_teams' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assig
+
+2024-09-12T20:41:27.517+0530    connected to: mongodb://localhost/
+ned_teams,join_date,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localho
+
+2024-09-12T20:41:27.518+0530    Failed: read error on entry #1: line 1, column 34: bare " in non-quoted-field
+2024-09-12T20:41:27.518+0530    0 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assig
+ned_teams,join_date,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer-withoutHeader - Sheet.csv
+" --uri mongodb://localhost:27017
+2024-09-12T20:42:45.540+0530    Failed: open C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer-withoutHeader - Sheet.csv: The system cannot find the file specified.
+2024-09-12T20:42:45.541+0530    0 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assig
+ned_teams,join_date,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer-withoutHeader - Sheet1.cs
+v" --uri mongodb://localhost:27017
+2024-09-12T20:43:49.813+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:43:49.816+0530    continuing through error: Document failed validation
+2024-09-12T20:43:49.816+0530    continuing through error: Document failed validation
+2024-09-12T20:43:49.816+0530    continuing through error: Document failed validation
+2024-09-12T20:43:49.816+0530    continuing through error: Document failed validation
+2024-09-12T20:43:49.816+0530    0 document(s) imported successfully. 4 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor - Sheet1 (1).csv" --uri mongodb://localhost:27017
+2024-09-12T20:50:04.034+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:50:04.037+0530    continuing through error: Document failed validation
+2024-09-12T20:50:04.037+0530    continuing through error: Document failed validation
+2024-09-12T20:50:04.038+0530    0 document(s) imported successfully. 2 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection TeamLeader --type csv --fields teamleader_id,name,email,WingName,wing_id,mentor_id,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\TeamLeader.csv" --uri mongodb://localhost:27017
+2024-09-12T20:52:23.232+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:52:23.240+0530    6 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Volunteer --type csv --fields volunteer_id,name,email,phone,teamleader_id,mentor_id,status,assigned_tasks --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer.csv"--uri mongodb://localhost:27017
+2024-09-12T20:54:10.899+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:54:10.904+0530    5 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assigned_teams,join_date,status --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\mentor (2).csv" --uri mongodb://loc
+alhost:27017
+2024-09-12T20:57:06.424+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:57:06.427+0530    continuing through error: Document failed validation
+2024-09-12T20:57:06.427+0530    continuing through error: Document failed validation
+2024-09-12T20:57:06.427+0530    continuing through error: Document failed validation
+2024-09-12T20:57:06.427+0530    0 document(s) imported successfully. 3 document(s) failed to import.
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Mentor --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\Mentor.json" --jsonArray --uri mongodb://localhost:27017
+2024-09-12T20:58:47.370+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:58:47.381+0530    exported 5 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection TeamLeader --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\TeamLeader.json" --jsonArray --uri mongodb://localhost:27017
+2024-09-12T20:59:00.622+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:59:00.630+0530    exported 12 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Volunteer --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\Volunteer.json" --jsonArray --uri mongodb://localhost:27017
+2024-09-12T20:59:09.166+0530    connected to: mongodb://localhost:27017
+2024-09-12T20:59:09.175+0530    exported 11 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assigned_teams,join_date,status --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor.csv" --uri mongodb://localhost:27017
+2024-09-12T21:00:35.404+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:00:35.414+0530    exported 5 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection TeamLeader --type csv --fields teamleader_id,name,email,WingName,wing_id,mentor_id,status --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\TeamLeader.csv" --uri mongodb://localhost:27017
+2024-09-12T21:00:55.028+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:00:55.036+0530    exported 12 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Volunteer --type csv --fields volunteer_id,name,email,phone,teamleader_id,mentor_id,status,assigned_tasks --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer.csv" --uri mongodb://localhost:27017
+2024-09-12T21:01:16.671+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:01:16.677+0530    exported 11 records
+
+C:\Users\lsrin>mongoimport --db CAPSaggregation --collection Mentor --type csv --headerline --file "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\TeamLeader.csv" --uri mongodb://localhost:27017
+2024-09-12T21:02:58.332+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.335+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.336+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.336+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.336+0530    continuing through error: Document failed validation
+2024-09-12T21:02:58.336+0530    0 document(s) imported successfully. 12 document(s) failed to import.
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Mentor --type csv --fields mentor_id,name,email,phone,assigned_teams,join_date,status --query '{ "status": "active" }' --limit 5 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Mentor_filtered.csv" --uri mongodb://localhost:27017
+2024-09-12T21:04:41.554+0530    error parsing command line options: error parsing positional arguments: provide only one MongoDB connection string. Connection strings must begin with mongodb:// or mongodb+srv:// schemes
+2024-09-12T21:04:41.555+0530    try 'mongoexport --help' for more information
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Volunteer --type csv --fields volunteer_id,name,email,phone,teamleader_id,mentor_id,status,assigned_tasks --query "{ \"status\": \"active\" }" --limit 10 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\Volunteer_filtered.csv" --uri mongodb://localhost:27017
+2024-09-12T21:06:23.813+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:06:23.829+0530    exported 6 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection TeamLeader --type csv --fields teamleader_id,name,email,WingName,wing_id,mentor_id,status --query "{ \"WingName\": \"TechTank\" }" --limit 3 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\CSV\TeamLeader_filtered.csv" --uri mongodb://localhost:27017
+2024-09-12T21:07:04.989+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:07:05.010+0530    exported 2 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Mentor --type json --query '{ "status": "active" }' --limit 5 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\Mentor_filtered.json" --uri mongodb://localhost:27017
+2024-09-12T21:08:23.438+0530    error parsing command line options: error parsing positional arguments: provide only one MongoDB connection string. Connection strings must begin with mongodb:// or mongodb+srv:// schemes
+2024-09-12T21:08:23.439+0530    try 'mongoexport --help' for more information
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection TeamLeader --type json --query '{ "WingName": "TechTank" }' --limit 3 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\TeamLeader_filtered.json" --uri mongodb://localhost:27017
+2024-09-12T21:08:35.395+0530    error parsing command line options: error parsing positional arguments: provide only one MongoDB connection string. Connection strings must begin with mongodb:// or mongodb+srv:// schemes
+2024-09-12T21:08:35.397+0530    try 'mongoexport --help' for more information
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection TeamLeader --type json --query "{ \"WingName\": \"TechTank\" }" --limit 3 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\TeamLeader_filtered.json" --uri mongodb://localhost:27017
+2024-09-12T21:09:30.417+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:09:30.445+0530    exported 2 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Mentor --type json --query "{ \"status\": \"active\" }" --limit 5 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\Mentor_filtered.json" --uri mongodb://localhost:27017
+2024-09-12T21:09:40.922+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:09:40.945+0530    exported 3 records
+
+C:\Users\lsrin>mongoexport --db CAPSaggregation --collection Volunteer --type json --query "{ \"status\": \"active\" }"--limit 10 --out "C:\Users\lsrin\Downloads\AIMLT-1\AD_DBMS\DBMS\JSON\Volunteer_filtered.json" --uri mongodb://localhost:27017
+2024-09-12T21:09:53.123+0530    connected to: mongodb://localhost:27017
+2024-09-12T21:09:53.146+0530    exported 6 records
+
+C:\Users\lsrin>https://docs.google.com/document/d/1E_7rYsWKmKuhuBeTORUbD7Rk-0d8mYTHId6QiduZugk/edit?usp=sharing

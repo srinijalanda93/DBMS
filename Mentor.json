@@ -1,0 +1,23 @@
+[
+    {
+     
+      "mentor_id": "M201",
+      "name": "THv",
+      "email": "thv@gmail.com",
+      "phone": "9806732145",
+      "assigned_teams": ["T020", "T029"],
+      "join_date": { "$date": "2012-01-01T00:00:00.000Z" },
+      "status": "active"
+    },
+    {
+     
+        "mentor_id": "M301",
+        "name": "jimin",
+        "email": "jimin@gmail.com",
+        "phone": "1806732145",
+        "assigned_teams": ["T120", "T129"],
+        "join_date": { "$date": "2018-01-01T00:00:00.000Z" },
+        "status": "inactive"
+      }
+  ]
+  

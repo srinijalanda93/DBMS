@@ -1,0 +1,6 @@
+mentor_id,name,email,phone,assigned_teams,join_date,status
+M001,Kim Namjoon,KimNamjoon@example.com,9806732145,"[""T001"",""T002""]",2022-01-01T00:00:00.000Z,active
+M021,Divi,divi@example.com,9704531318,"[""T021"",""T022""]",2022-02-01T00:00:00.000Z,active
+M031,Avi,Avi@example.com,762319087,"[""T031"",""T022""]",2023-02-01T00:00:00.000Z,inactive
+M301,jimin,jimin@gmail.com,1806732145,"[""T120"",""T129""]",2018-01-01T00:00:00.000Z,inactive
+M201,THv,thv@gmail.com,9806732145,"[""T020"",""T029""]",2012-01-01T00:00:00.000Z,active
